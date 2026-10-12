@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Récap · Démo Nextround</title>
+  <link rel="icon" href="../logo.svg">
+  <link rel="stylesheet" href="coach.css">
+</head>
+<body>
+  <header class="entete">
+    <a class="logo" href="../" style="text-decoration:none;color:inherit"><span>NEXT</span>ROUND</a>
+    <div class="etat" id="etat" role="status"></div>
+  </header>
+  <div class="partie" id="partie"></div>
+
+  <p class="partie"><a href="./" style="color:var(--rouge)">← Simuler une autre partie</a></p>
+  <div class="colonnes" style="grid-template-columns:1fr;max-width:760px">
+    <main id="contenu"></main>
+
+    <aside class="cote" hidden>
+      <!-- Pub Overwolf (400 x 300) : le conteneur doit rester vide, visible et collé au contenu de l'appli. -->
+      <div class="pub" id="pub"></div>
+
+      <section class="bloc">
+        <div class="etiquette">Réglages du pop-up en jeu</div>
+        <label class="reglage"><input type="checkbox" id="reglage-popup"> Afficher un conseil à chaque manche</label>
+        <label class="reglage">Position
+          <select id="reglage-position">
+            <option value="droite">À droite (près des armes)</option>
+            <option value="gauche">À gauche (sous la minimap)</option>
+            <option value="haut">En haut (sous le score)</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="bloc">
+        <div class="etiquette">Une idée ? Un bug ?</div>
+        <form id="ticket" class="ticket">
+          <select id="ticket-type" aria-label="Type de message">
+            <option>Idée</option>
+            <option>Bug</option>
+            <option>Autre</option>
+          </select>
+          <textarea id="ticket-message" maxlength="1000" rows="3" aria-label="Ton message" placeholder="Dis-nous ce que tu voudrais voir dans Nextround…" required></textarea>
+          <button type="submit">Envoyer</button>
+          <p class="ticket-retour" id="ticket-retour" role="status"></p>
+        </form>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Mention obligatoire demandée par Riot Games pour toute appli tierce. -->
+  <footer class="mentions">
+    Nextround n’est pas approuvé par Riot Games et ne reflète pas les opinions de Riot Games ni de quiconque officiellement impliqué dans la production ou la gestion des propriétés de Riot Games. Riot Games et toutes les propriétés associées sont des marques commerciales ou des marques déposées de Riot Games, Inc.
+  </footer>
+
+  <script src="moteur.min.js"></script>
+  <script src="coach.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+:root {
+  --fond: #0f1923;
+  --carte: #1a2733;
+  --bordure: #2a3a48;
+  --texte: #ece8e1;
+  --discret: #8b978f;
+  --rouge: #ff4655;
+  --vert: #3ddc97;
+  --jaune: #f5c451;
+  --bleu: #7b8cff;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: radial-gradient(ellipse at 70% 0%, rgba(255, 70, 85, .14), transparent 55%), var(--fond);
+  color: var(--texte);
+  font: 17px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+a { color: inherit; }
+img, video { max-width: 100%; display: block; }
+
+.haut, main, .bas { width: min(1100px, 100% - 32px); margin-inline: auto; }
+
+.haut { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; gap: 16px; }
+.marque { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; letter-spacing: 3px; font-size: 18px; }
+.marque img { border-radius: 50%; border: 2px solid var(--rouge); }
+.marque b { color: var(--rouge); }
+.haut nav { display: flex; gap: 20px; font-size: 15px; }
+.haut nav a { text-decoration: none; color: var(--discret); }
+.haut nav a:hover { color: var(--texte); }
+
+.accroche { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; padding: 48px 0 72px; }
+.sur-titre { color: var(--rouge); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; font-size: 14px; }
+h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.02; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -1px; margin: 10px 0 20px; }
+h1 em { color: var(--rouge); }
+.intro { color: #cfcac2; font-size: 19px; max-width: 34em; }
+.intro strong { color: var(--texte); }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.bouton {
+  display: inline-block; text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 10px;
+  border: 1px solid var(--bordure); background: var(--carte);
+}
+.bouton:hover { border-color: var(--texte); }
+.bouton.principal { background: var(--rouge); border-color: var(--rouge); color: #fff; box-shadow: 0 10px 30px rgba(255, 70, 85, .3); }
+.bouton.principal:hover { filter: brightness(1.08); }
+.bientot { margin-top: 16px; color: var(--jaune); font-weight: 600; font-size: 15px; letter-spacing: 1px; }
+
+.telephone { justify-self: center; width: min(320px, 100%); aspect-ratio: 9 / 16; border-radius: 28px; overflow: hidden; border: 6px solid #22303c; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); background: #000; }
+.telephone video { width: 100%; height: 100%; object-fit: cover; }
+
+h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; text-transform: uppercase; font-style: italic; margin-bottom: 24px; }
+
+.fonctions { padding: 24px 0 64px; }
+.cartes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.carte { background: var(--carte); border: 1px solid var(--bordure); border-top: 4px solid; border-radius: 12px; padding: 20px; }
+.carte h3 { font-size: 19px; margin-bottom: 8px; }
+.carte p { color: #cfcac2; font-size: 15px; }
+.carte.rouge { border-top-color: var(--rouge); }
+.carte.jaune { border-top-color: var(--jaune); }
+.carte.vert { border-top-color: var(--vert); }
+.carte.bleu { border-top-color: var(--bleu); }
+
+.regles { padding: 0 0 64px; }
+.regles ul { list-style: none; padding: 0; display: grid; gap: 12px; max-width: 46em; }
+.regles li { padding-left: 22px; position: relative; color: #cfcac2; }
+.regles li::before { content: "›"; position: absolute; left: 0; color: var(--rouge); font-weight: 800; }
+.regles strong { color: var(--texte); }
+
+.appel { text-align: center; background: var(--carte); border: 1px solid var(--bordure); border-radius: 16px; padding: 40px 24px; margin-bottom: 64px; }
+.appel p { color: #cfcac2; margin: -10px auto 22px; max-width: 32em; }
+
+.bas { border-top: 1px solid var(--bordure); padding: 24px 0 40px; font-size: 14px; color: var(--discret); }
+.bas p + p { margin-top: 10px; }
+.legal { font-size: 12px; opacity: .8; }
+
+/* Pages de texte (confidentialité) */
+.page { max-width: 760px; padding: 24px 0 64px; }
+.page h1 { font-size: clamp(28px, 5vw, 40px); }
+.page h2 { font-size: 22px; font-style: normal; text-transform: none; margin: 28px 0 10px; }
+.page ul { padding-left: 20px; display: grid; gap: 6px; color: #cfcac2; }
+.page p { color: #cfcac2; margin-bottom: 10px; }
+
+@media (max-width: 900px) {
+  .accroche { grid-template-columns: 1fr; padding-top: 24px; }
+  .cartes { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .cartes { grid-template-columns: 1fr; }
+  .bouton { width: 100%; text-align: center; }
+}

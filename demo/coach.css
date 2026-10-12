@@ -1,0 +1,152 @@
+:root {
+  --fond: #0f1923;
+  --carte: #1a2733;
+  --bordure: #2a3a48;
+  --texte: #ece8e1;
+  --discret: #8b978f;
+  --rouge: #ff4655;
+  --vert: #3ddc97;
+  --jaune: #f5c451;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+  padding: 20px 18px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.entete { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.logo { font-weight: 800; font-size: 20px; letter-spacing: 2px; }
+.logo span { color: var(--rouge); }
+.partie { color: var(--discret); font-size: 13px; }
+.partie .victoire { color: var(--vert); font-weight: 600; }
+.partie .defaite { color: var(--rouge); font-weight: 600; }
+
+.etat { font-size: 12px; color: var(--discret); display: flex; align-items: center; gap: 6px; }
+.etat::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--discret); }
+.etat.en-jeu { color: var(--vert); }
+.etat.en-jeu::before { background: var(--vert); box-shadow: 0 0 6px var(--vert); }
+
+/* Deux colonnes : l'analyse à gauche, la pub et les réglages à droite (toujours visibles). */
+.colonnes { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 14px; align-items: start; flex: 1; }
+.cote { position: sticky; top: 12px; display: flex; flex-direction: column; gap: 12px; }
+
+main { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+.mentions { font-size: 10px; line-height: 1.4; color: var(--discret); opacity: 0.8; }
+
+.bloc {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.etiquette {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--discret);
+  margin-bottom: 6px;
+}
+
+.probleme { border-left: 4px solid var(--rouge); }
+.probleme h1 { font-size: 21px; line-height: 1.25; margin-bottom: 6px; }
+.probleme .chiffre { color: var(--rouge); font-weight: 600; margin-bottom: 6px; }
+.probleme p:last-child { color: var(--discret); }
+
+.exercice { border-left: 4px solid var(--jaune); }
+.exercice p { font-size: 16px; }
+.exercice .objectif { margin-top: 8px; color: var(--jaune); font-weight: 600; font-size: 14px; }
+
+.fort { border-left: 4px solid var(--vert); }
+.fort h1 { font-size: 21px; line-height: 1.25; margin-bottom: 6px; }
+
+.suivi { font-weight: 600; }
+.suivi.reussi { color: var(--vert); border-color: var(--vert); }
+.suivi.rate { color: var(--jaune); }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.stat { background: var(--carte); border: 1px solid var(--bordure); border-radius: 10px; padding: 10px 6px; text-align: center; }
+.stat strong { display: block; font-size: 18px; }
+.stat span { font-size: 11px; color: var(--discret); }
+
+.historique { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.historique li { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; }
+.historique li span:last-child { color: var(--discret); text-align: right; }
+
+.agent { border-left: 4px solid #7b8cff; }
+
+.moments, .observations { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.moments li { display: flex; flex-direction: column; padding-left: 10px; border-left: 3px solid var(--bordure); }
+.moments li.bon { border-color: var(--vert); }
+.moments li.mauvais { border-color: var(--rouge); }
+.moments strong { font-size: 12px; color: var(--discret); }
+.observations li { padding-left: 14px; position: relative; }
+.observations li::before { content: "›"; position: absolute; left: 0; color: var(--rouge); font-weight: 700; }
+
+.grille-manches { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; }
+.manche {
+  background: var(--fond); color: var(--texte); border: 1px solid var(--bordure); border-bottom-width: 3px;
+  border-radius: 6px; padding: 4px 2px; font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center;
+}
+.manche b { font-size: 13px; }
+.manche span { font-size: 10px; color: var(--discret); white-space: nowrap; }
+.manche i { font-style: normal; margin-left: 2px; }
+.manche.gagnee { border-bottom-color: var(--vert); }
+.manche.perdue { border-bottom-color: var(--rouge); }
+.manche.choisie, .manche:hover { border-color: var(--texte); }
+.rouge { color: var(--rouge); font-style: normal; }
+.jaune { color: var(--jaune); font-style: normal; }
+.legende { font-size: 11px; color: var(--discret); margin-top: 8px; }
+.detail-manche { display: none; margin-top: 10px; padding: 10px 12px; background: var(--fond); border-radius: 8px; font-size: 14px; }
+.detail-manche.visible { display: block; }
+.detail-manche ul { margin-top: 4px; padding-left: 18px; color: var(--discret); }
+
+.reglage { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 14px; margin-top: 6px; }
+.reglage input { accent-color: var(--rouge); width: 16px; height: 16px; order: 1; }
+
+select, textarea, .ticket button {
+  background: var(--fond); color: var(--texte); border: 1px solid var(--bordure);
+  border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px;
+}
+select { max-width: 70%; }
+.ticket { display: flex; flex-direction: column; gap: 8px; }
+.ticket select { max-width: none; align-self: flex-start; }
+.ticket textarea { resize: vertical; width: 100%; }
+.ticket button { background: var(--rouge); border-color: var(--rouge); font-weight: 700; cursor: pointer; }
+.ticket button:disabled { opacity: 0.5; cursor: default; }
+.ticket-retour { font-size: 13px; color: var(--discret); min-height: 1em; }
+
+.vide { text-align: center; padding: 40px 16px; color: var(--discret); }
+.vide h1 { color: var(--texte); font-size: 20px; margin-bottom: 8px; }
+
+.pub {
+  width: 400px;
+  height: 300px;
+  background: transparent;
+}
+/* Hors d'Overwolf (simulateur), on montre où ira la pub. */
+.pub.apercu { border: 1px dashed var(--bordure); border-radius: 10px; display: grid; place-items: center; color: var(--discret); font-size: 12px; }
+.pub.apercu::before { content: "Pub Overwolf (400 × 300)"; }
+
+@media (max-width: 860px) {
+  .colonnes { grid-template-columns: minmax(0, 1fr); }
+  .cote { position: static; }
+}
+
+@media (max-width: 440px) {
+  .pub { max-width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
