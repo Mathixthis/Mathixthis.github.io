@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nextround · Coach Valorant</title>
-  <meta name="description" content="Nextround, ton coach Valorant gratuit : après chaque partie, il trouve ton erreur n°1 et te donne une mission pour la game suivante.">
+  <meta name="description" content="Nextround, ton coach Valorant gratuit : après chaque partie, il trouve ton erreur n°1 et te donne une mission pour la game suivante. Conseils en jeu, badges, défis de la semaine.">
   <meta property="og:title" content="Nextround · Coach Valorant">
   <meta property="og:description" content="Après chaque partie, ton erreur n°1 et une mission pour la game suivante. Gratuit, bientôt sur Overwolf.">
   <meta property="og:image" content="logo.png">
@@ -14,7 +14,7 @@
 <body>
   <header class="haut">
     <a class="marque" href="./"><img src="logo.svg" alt="" width="40" height="40"><span><b>NEXT</b>ROUND</span></a>
-    <nav><a href="demo/">Démo</a><a href="https://discord.gg/EwW5F2tnf2">Discord</a></nav>
+    <nav><a href="#fonctions">Fonctions</a><a href="#communaute">Discord</a><a href="#faq">FAQ</a><a href="demo/">Démo</a></nav>
   </header>
 
   <main>
@@ -22,38 +22,105 @@
       <div class="texte">
         <p class="sur-titre">Coach Valorant gratuit</p>
         <h1>Tu perds tes ranked sans savoir <em>pourquoi&nbsp;?</em></h1>
-        <p class="intro">Après chaque partie, Nextround trouve <strong>ton erreur n°1</strong> et te donne <strong>une seule mission</strong> pour la game suivante. Et en pleine game, un petit conseil entre les manches.</p>
+        <p class="intro">Après chaque partie, Nextround trouve <strong>ton erreur n°1</strong> et te donne <strong>une seule mission</strong> pour la game suivante. Pendant la game, il te glisse le bon conseil au bon moment.</p>
         <div class="boutons">
           <a class="bouton principal" href="https://discord.gg/EwW5F2tnf2">Rejoindre la bêta sur Discord</a>
           <a class="bouton" href="demo/">Essayer la démo</a>
         </div>
-        <p class="bientot">Bientôt sur Overwolf · Windows</p>
+        <ul class="chiffres">
+          <li><strong>54</strong><span>conseils de coachs</span></li>
+          <li><strong>28</strong><span>agents couverts</span></li>
+          <li><strong>14</strong><span>badges à débloquer</span></li>
+        </ul>
       </div>
       <div class="telephone">
         <video src="clip.mp4" poster="clip.jpg" controls muted playsinline loop preload="metadata"></video>
       </div>
     </section>
 
-    <section class="fonctions">
-      <h2>Ce que fait Nextround</h2>
+    <section class="etapes">
+      <ol>
+        <li><span>1</span><h3>Lance une ranked</h3><p>Nextround tourne en fond avec Overwolf. Rien à configurer.</p></li>
+        <li><span>2</span><h3>Joue normalement</h3><p>Entre les manches, un petit conseil s’affiche dans un coin libre de l’écran.</p></li>
+        <li><span>3</span><h3>Lis ton récap</h3><p>Ton erreur n°1, ta mission, et la preuve que tu progresses à la partie suivante.</p></li>
+      </ol>
+    </section>
+
+    <section class="fonction" id="fonctions">
+      <div class="explication">
+        <p class="sur-titre">Après la game</p>
+        <h2>Ton erreur n°1. Une seule mission.</h2>
+        <p>Pas un mur de stats : Nextround cherche ce qui t’a coûté le plus de manches (premières morts, kit gardé en poche, morts jamais échangées, visée trop basse…) et te donne <strong>un objectif concret</strong> pour la partie suivante.</p>
+        <p>À la game d’après, il vérifie si tu as réussi.</p>
+      </div>
+      <div class="captures pile">
+        <img src="images/recap.png" alt="Récap Nextround : ton problème n°1 et ta mission pour la prochaine partie" loading="lazy">
+        <img class="petite" src="images/mission-reussie.png" alt="Objectif de la dernière partie réussi" loading="lazy">
+      </div>
+    </section>
+
+    <section class="fonction inverse">
+      <div class="explication">
+        <p class="sur-titre">Pendant la game</p>
+        <h2>Le bon conseil, au bon moment.</h2>
+        <p>Pistol perdu, équipe qui n’achète pas pareil, retake raté, post-plant perdu, série de défaites… Nextround reconnaît la situation et affiche <strong>un conseil court tiré de guides de coachs</strong>.</p>
+        <p>Uniquement quand tu es mort ou entre deux manches, jamais pendant un duel. Tu peux le déplacer ou le couper.</p>
+      </div>
+      <div class="captures ecran-jeu">
+        <img src="images/popup-eco.png" alt="Pop-up : pistol perdu, éco à la prochaine" loading="lazy">
+        <img src="images/popup-synchro.png" alt="Pop-up : équipe pas sur la même économie" loading="lazy">
+        <img src="images/popup-retake.png" alt="Pop-up : conseil de retake" loading="lazy">
+        <img src="images/popup-clutch.png" alt="Pop-up : clutch gagné" loading="lazy">
+      </div>
+    </section>
+
+    <section class="fonction">
+      <div class="explication">
+        <p class="sur-titre">Ton niveau</p>
+        <h2>Compare-toi à ton rang.</h2>
+        <p>Choisis ton rang dans l’appli : tes tirs à la tête sont comparés à <strong>la moyenne des joueurs de ton rang</strong> (données Tracker.gg). Tu sais enfin si ta visée te bloque vraiment.</p>
+        <p>Et chaque manche est détaillée : retakes, post-plants, pistols, écos, clutchs.</p>
+      </div>
+      <div class="captures pile">
+        <img src="images/visee-rang.png" alt="Ta visée comparée à la moyenne Ascendant" loading="lazy">
+        <img src="images/stats.png" alt="Statistiques de la partie" loading="lazy">
+      </div>
+    </section>
+
+    <section class="fonction inverse">
+      <div class="explication">
+        <p class="sur-titre">Progresser, c’est un jeu</p>
+        <h2>Badges et défis de la semaine.</h2>
+        <p><strong>14 badges</strong> à débloquer (Sniper, ACE, Roi du clutch, Increvable…) et <strong>3 défis</strong> qui changent chaque lundi, les mêmes pour tout le monde.</p>
+        <p>De quoi avoir une raison de lancer la game suivante.</p>
+      </div>
+      <div class="captures pile">
+        <img src="images/nouveautes.png" alt="Nouveaux badges débloqués" loading="lazy">
+        <img src="images/defis.png" alt="Défis de la semaine avec leur progression" loading="lazy">
+        <div class="apercu-badges"><img src="images/badges.png" alt="Collection de badges Nextround" loading="lazy"></div>
+      </div>
+    </section>
+
+    <section class="communaute" id="communaute">
+      <p class="sur-titre">La communauté</p>
+      <h2>Monte au classement du Discord.</h2>
+      <p class="intro">Active le partage dans l’appli : tes badges, missions réussies et défis s’affichent sur le serveur Nextround et te rapportent des points.</p>
       <div class="cartes">
-        <article class="carte rouge">
-          <h3>Ton erreur n°1</h3>
-          <p>Premières morts, compétences gardées en poche, morts jamais échangées, tirs dans le corps : Nextround repère ce qui te coûte le plus de manches.</p>
-        </article>
         <article class="carte jaune">
-          <h3>Une mission</h3>
-          <p>Un seul objectif concret pour la game suivante, et Nextround vérifie à la partie d’après si tu as progressé.</p>
+          <h3>🏆 Classement de la semaine</h3>
+          <p>Badge = 3 pts, mission réussie = 2 pts, défi terminé = 5 pts. Le podium est annoncé chaque lundi.</p>
+        </article>
+        <article class="carte rouge">
+          <h3>🎖️ Rôles de progression</h3>
+          <p>Plus tu réussis de missions, plus ton rôle monte :</p>
+          <p class="roles"><span class="r1">Recrue</span><span class="r2">Confirmé</span><span class="r3">Expert</span><span class="r4">Maître Nextround</span></p>
         </article>
         <article class="carte vert">
-          <h3>Manche par manche</h3>
-          <p>Chaque manche analysée : kills, morts, clutchs, moments clés, attaque contre défense. Plus des conseils adaptés à ton agent.</p>
-        </article>
-        <article class="carte bleu">
-          <h3>Un conseil en jeu</h3>
-          <p>Un petit message discret entre les manches, seulement quand tu es mort ou que la manche est finie. Jamais pendant un duel.</p>
+          <h3>🔗 Une commande, c’est lié</h3>
+          <p>L’appli te donne un code : tape <code>/lier</code> sur le serveur, une seule fois. Ton pseudo Riot n’est jamais partagé.</p>
         </article>
       </div>
+      <a class="bouton principal" href="https://discord.gg/EwW5F2tnf2">Rejoindre le Discord</a>
     </section>
 
     <section class="regles">
@@ -66,10 +133,20 @@
       </ul>
     </section>
 
+    <section class="faq" id="faq">
+      <h2>Questions fréquentes</h2>
+      <details><summary>C’est gratuit ?</summary><p>Oui, entièrement. Nextround affiche une petite pub Overwolf dans la fenêtre du récap, c’est tout.</p></details>
+      <details><summary>Je risque un ban ?</summary><p>Nextround utilise uniquement les données de partie fournies officiellement par Overwolf. Il ne lit pas la mémoire du jeu, n’automatise rien et ne montre aucune info sur les ennemis. Il n’analyse que ce que tu as fait toi-même.</p></details>
+      <details><summary>Ça marche sur console (PS5, Xbox) ?</summary><p>Non, Overwolf fonctionne uniquement sur PC Windows. Nextround est donc réservé à Valorant sur PC.</p></details>
+      <details><summary>Quand est-ce que ça sort ?</summary><p>L’appli est en cours de validation chez Overwolf. Une bêta fermée ouvrira d’abord pour les membres du Discord inscrits à la « Liste bêta ». Rejoins le serveur pour être prévenu.</p></details>
+      <details><summary>Mes données sont envoyées quelque part ?</summary><p>Non. Tes parties restent sur ton PC. Seul le partage sur le Discord, désactivé par défaut, envoie le pseudo que tu choisis et tes badges. Tout est expliqué dans la <a href="confidentialite.html">politique de confidentialité</a>.</p></details>
+      <details><summary>Je peux proposer une idée ?</summary><p>Oui ! Il y a un formulaire « Une idée ? Un bug ? » dans l’appli, et un salon dédié sur le Discord.</p></details>
+    </section>
+
     <section class="appel">
       <h2>Teste Nextround avant tout le monde</h2>
       <p>Rejoins le Discord et réponds « Oui » à la question sur la bêta : on te prévient dès qu’elle ouvre.</p>
-      <a class="bouton principal" href="https://discord.gg/EwW5F2tnf2">Rejoindre le Discord</a>
+      <a class="bouton principal" href="https://discord.gg/EwW5F2tnf2">Rejoindre la bêta</a>
     </section>
   </main>
 

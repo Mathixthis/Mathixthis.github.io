@@ -150,3 +150,50 @@ select { max-width: 70%; }
 @media (max-width: 420px) {
   .stats { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Situations de jeu (retakes, post-plants…) */
+.situations { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.situations > li { padding-left: 10px; border-left: 3px solid var(--vert); }
+.situations > li.a-travailler { border-left-color: var(--jaune); }
+.situation-titre { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+.situation-titre strong { font-weight: 600; }
+.conseils-situation { margin-top: 4px; padding-left: 18px; color: var(--discret); font-size: 13px; }
+
+/* Bibliothèque de conseils */
+.bibliotheque .theme { border-top: 1px solid var(--bordure); padding: 8px 0; }
+.bibliotheque .theme:first-of-type { border-top: none; }
+.bibliotheque summary { cursor: pointer; display: flex; flex-direction: column; gap: 2px; }
+.bibliotheque summary span { font-weight: 600; }
+.bibliotheque summary small { color: var(--discret); font-size: 12px; }
+.bibliotheque ul { margin: 8px 0 6px; padding-left: 18px; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+.bibliotheque .sources { font-size: 12px; color: var(--discret); }
+.bibliotheque .sources a { color: var(--discret); }
+
+/* Badges et défis */
+.nouveautes { border-left: 4px solid var(--jaune); background: linear-gradient(90deg, rgba(245, 196, 81, .12), var(--carte) 60%); }
+.nouveautes ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.nouveautes li { display: flex; gap: 10px; align-items: center; }
+.nouveautes strong { display: block; color: var(--jaune); }
+.badge-emoji { font-size: 22px; line-height: 1; }
+
+.defis { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+.defi-titre { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.defi-titre strong { color: var(--discret); font-size: 13px; white-space: nowrap; }
+.defis li.fini .defi-titre strong { color: var(--vert); }
+.jauge { height: 6px; border-radius: 3px; background: var(--fond); overflow: hidden; }
+.jauge div { height: 100%; background: var(--jaune); border-radius: 3px; }
+.defis li.fini .jauge div { background: var(--vert); }
+
+.badges { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.badges li { background: var(--fond); border: 1px solid var(--bordure); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 2px; }
+.badges li strong { font-size: 14px; }
+.badges li span:not(.badge-emoji) { font-size: 12px; color: var(--discret); }
+.badges li em { font-style: normal; font-size: 11px; color: var(--discret); margin-top: 4px; }
+.badges li.gagne { border-color: var(--jaune); }
+.badges li.gagne em { color: var(--jaune); }
+.badges li.verrouille .badge-emoji { filter: grayscale(1); opacity: .45; }
+
+.reglage input[type="text"] { width: 60%; height: auto; accent-color: auto; background: var(--fond); color: var(--texte); border: 1px solid var(--bordure); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; max-width: 60%; }
+.reglage input[type="text"]:disabled { opacity: .5; }
+.aide { font-size: 13px; color: var(--discret); margin-top: 8px; }
+.aide code { color: var(--jaune); font-weight: 700; }

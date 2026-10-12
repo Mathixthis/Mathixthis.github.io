@@ -25,6 +25,11 @@
       <section class="bloc">
         <div class="etiquette">Réglages du pop-up en jeu</div>
         <label class="reglage"><input type="checkbox" id="reglage-popup"> Afficher un conseil à chaque manche</label>
+        <label class="reglage">Ton rang
+          <select id="reglage-rang">
+            <option value="">Je ne sais pas</option>
+          </select>
+        </label>
         <label class="reglage">Position
           <select id="reglage-position">
             <option value="droite">À droite (près des armes)</option>
@@ -32,6 +37,15 @@
             <option value="haut">En haut (sous le score)</option>
           </select>
         </label>
+      </section>
+
+      <section class="bloc">
+        <div class="etiquette">Partager sur le Discord</div>
+        <label class="reglage"><input type="checkbox" id="reglage-partage"> Afficher mes badges et missions réussies sur le serveur Nextround</label>
+        <label class="reglage">Pseudo affiché
+          <input type="text" id="reglage-pseudo" maxlength="24" placeholder="Ton pseudo Discord" autocomplete="off">
+        </label>
+        <p class="aide" id="liaison" hidden>Pour recevoir tes rôles, tape <code>/lier <span id="code-liaison"></span></code> sur le serveur Discord. Ne donne ce code à personne.</p>
       </section>
 
       <section class="bloc">
@@ -49,6 +63,12 @@
       </section>
     </aside>
   </div>
+
+  <!-- Tous les conseils de coach, par situation, avec les guides utilisés pour les écrire. -->
+  <section class="bloc bibliotheque" aria-labelledby="titre-bibliotheque">
+    <div class="etiquette" id="titre-bibliotheque">Bibliothèque de conseils</div>
+    <div id="bibliotheque"></div>
+  </section>
 
   <!-- Mention obligatoire demandée par Riot Games pour toute appli tierce. -->
   <footer class="mentions">
