@@ -240,3 +240,45 @@ select { max-width: 70%; }
 .stats-groupes .erreur-frequente { color: var(--discret); font-size: 13px; }
 .stats-groupes tbody tr:last-child th, .stats-groupes tbody tr:last-child td { border-bottom: none; }
 .stats-groupes td:not(.erreur-frequente) { white-space: nowrap; }
+
+/* Échauffement lié à la mission, objectif de rang. */
+.echauffement { border-left: 4px solid var(--jaune); }
+.echauffement ol { margin-top: 6px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #d5d1ca; }
+.objectif-rang { border-left: 4px solid #7b8cff; font-size: 14px; }
+
+/* Avis sur le diagnostic (bêta) et sondage. */
+.avis { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--discret); margin-top: -4px; }
+.avis > button, .notes button, .avis-detail button {
+  background: var(--carte); color: var(--texte); border: 1px solid var(--bordure); border-radius: 8px;
+  font: inherit; cursor: pointer; padding: 4px 10px;
+}
+.avis > button:hover, .notes button:hover, .avis-detail button:hover { border-color: var(--texte); }
+.avis-detail { display: flex; gap: 8px; width: 100%; align-items: flex-start; }
+.avis-detail[hidden] { display: none; }
+.avis-detail textarea { flex: 1; font-size: 13px; }
+.avis-merci { font-size: 13px; color: var(--discret); margin-top: -4px; }
+.sondage { border-left: 4px solid var(--vert); }
+.notes { display: flex; gap: 8px; margin-top: 8px; }
+.notes button { width: 40px; height: 36px; font-weight: 700; }
+
+/* « Voir toute la partie » : le détail se déplie sous le récap court. */
+.voir-plus > summary {
+  cursor: pointer; list-style: none; text-align: center; padding: 10px; border: 1px dashed var(--bordure);
+  border-radius: 10px; color: var(--discret); font-size: 14px;
+}
+.voir-plus > summary::-webkit-details-marker { display: none; }
+.voir-plus > summary::before { content: "▸ "; }
+.voir-plus[open] > summary::before { content: "▾ "; }
+.voir-plus > summary:hover { color: var(--texte); border-color: var(--texte); }
+.voir-plus-contenu { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+
+kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; font: inherit; font-size: 12px; }
+
+/* Fiches des maps (onglet progression). */
+.fiches-cartes { display: flex; flex-direction: column; gap: 8px; }
+.fiche-carte { background: var(--fond); border: 1px solid var(--bordure); border-radius: 8px; }
+.fiche-carte > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 10px; padding: 9px 12px; font-size: 14px; }
+.fiche-carte > summary span:last-child { color: var(--discret); white-space: nowrap; }
+.fiche-carte ul { list-style: none; padding: 0 12px 10px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #d5d1ca; }
+.fiche-carte .faible { color: var(--rouge); font-weight: 600; }
+.reglage select { width: 200px; }

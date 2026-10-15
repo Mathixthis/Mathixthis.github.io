@@ -30,11 +30,16 @@
       <div class="pub" id="pub"></div>
 
       <section class="bloc">
-        <div class="etiquette">Réglages du pop-up en jeu</div>
+        <div class="etiquette">Réglages</div>
         <label class="reglage"><input type="checkbox" id="reglage-popup"> Afficher un conseil à chaque manche</label>
         <label class="reglage">Ton rang
           <select id="reglage-rang">
             <option value="">Automatique (rang affiché en jeu)</option>
+          </select>
+        </label>
+        <label class="reglage">Ton objectif
+          <select id="reglage-objectif">
+            <option value="">Aucun</option>
           </select>
         </label>
         <label class="reglage">Position
@@ -44,6 +49,7 @@
             <option value="haut">En haut (sous le score)</option>
           </select>
         </label>
+        <p class="aide">En jeu, <kbd>Alt</kbd> + <kbd>N</kbd> affiche ta mission par-dessus Valorant.</p>
       </section>
 
       <section class="bloc">
