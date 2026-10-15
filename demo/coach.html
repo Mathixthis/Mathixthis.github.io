@@ -13,10 +13,17 @@
     <div class="etat" id="etat" role="status"></div>
   </header>
   <div class="partie" id="partie"></div>
+  <nav class="onglets" role="tablist">
+    <button role="tab" data-vue="contenu" aria-selected="true">Dernière partie</button>
+    <button role="tab" data-vue="progression" aria-selected="false">Ta progression</button>
+  </nav>
 
   <p class="partie"><a href="./" style="color:var(--rouge)">← Simuler une autre partie</a></p>
   <div class="colonnes" style="grid-template-columns:1fr;max-width:760px">
-    <main id="contenu"></main>
+    <main>
+      <div id="contenu"></div>
+      <div id="progression" hidden></div>
+    </main>
 
     <aside class="cote" hidden>
       <!-- Pub Overwolf (400 x 300) : le conteneur doit rester vide, visible et collé au contenu de l'appli. -->
@@ -27,7 +34,7 @@
         <label class="reglage"><input type="checkbox" id="reglage-popup"> Afficher un conseil à chaque manche</label>
         <label class="reglage">Ton rang
           <select id="reglage-rang">
-            <option value="">Je ne sais pas</option>
+            <option value="">Automatique (rang affiché en jeu)</option>
           </select>
         </label>
         <label class="reglage">Position

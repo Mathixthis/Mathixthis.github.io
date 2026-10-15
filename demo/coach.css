@@ -197,3 +197,46 @@ select { max-width: 70%; }
 .reglage input[type="text"]:disabled { opacity: .5; }
 .aide { font-size: 13px; color: var(--discret); margin-top: 8px; }
 .aide code { color: var(--jaune); font-weight: 700; }
+
+/* Onglets et progression */
+[hidden] { display: none !important; }
+#contenu, #progression { display: flex; flex-direction: column; gap: 12px; }
+.onglets { display: flex; gap: 6px; border-bottom: 1px solid var(--bordure); }
+.onglets button { background: none; border: none; border-bottom: 3px solid transparent; color: var(--discret); font: inherit; font-weight: 700; padding: 8px 12px; cursor: pointer; margin-bottom: -1px; }
+.onglets button[aria-selected="true"] { color: var(--texte); border-bottom-color: var(--rouge); }
+.onglets button:hover { color: var(--texte); }
+
+.courbe-titre { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.tendance { font-size: 12px; font-weight: 700; color: var(--discret); }
+.tendance.mieux { color: var(--vert); }
+.tendance.moins { color: var(--rouge); }
+.courbe-valeur { display: flex; align-items: baseline; gap: 8px; margin: 2px 0 4px; }
+.courbe-valeur strong { font-size: 24px; }
+.courbe-valeur span { font-size: 12px; color: var(--discret); }
+.courbe svg { width: 100%; height: auto; display: block; overflow: visible; }
+.courbe .axe { stroke: var(--bordure); stroke-width: 1; }
+.courbe .graduation { fill: var(--discret); font-size: 12px; }
+.courbe .ligne { fill: none; stroke: var(--jaune); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.courbe .point { fill: var(--jaune); stroke: var(--carte); stroke-width: 2; }
+.courbe .point.dernier { r: 6; }
+.courbe .reference { stroke: var(--discret); stroke-width: 1.5; stroke-dasharray: 5 5; }
+.courbe .reference-texte { fill: var(--discret); font-size: 12px; }
+.courbe .cible { fill: transparent; cursor: crosshair; }
+.bulle { position: fixed; z-index: 10; pointer-events: none; background: var(--fond); border: 1px solid var(--bordure); border-radius: 8px; padding: 8px 10px; font-size: 13px; display: flex; flex-direction: column; gap: 2px; box-shadow: 0 6px 20px rgba(0, 0, 0, .5); }
+.bulle strong { font-size: 16px; }
+.bulle span { color: var(--discret); }
+.bulle .victoire { color: var(--vert); }
+.bulle .defaite { color: var(--rouge); }
+
+.reglees { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.reglees li { display: flex; justify-content: space-between; gap: 10px; }
+.reglees li span { color: var(--vert); font-weight: 600; }
+.reglees li em { font-style: normal; color: var(--discret); white-space: nowrap; font-size: 13px; }
+
+.stats-groupes { width: 100%; border-collapse: collapse; font-size: 14px; }
+.stats-groupes th, .stats-groupes td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--bordure); }
+.stats-groupes thead th { font-size: 11px; color: var(--discret); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.stats-groupes td { font-variant-numeric: tabular-nums; }
+.stats-groupes .erreur-frequente { color: var(--discret); font-size: 13px; }
+.stats-groupes tbody tr:last-child th, .stats-groupes tbody tr:last-child td { border-bottom: none; }
+.stats-groupes td:not(.erreur-frequente) { white-space: nowrap; }
