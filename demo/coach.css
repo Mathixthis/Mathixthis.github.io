@@ -290,3 +290,20 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .boutons-carte { display: flex; gap: 8px; }
 .boutons-carte button, .boutons-carte .bouton { background: var(--rouge); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
 .boutons-carte .bouton { background: var(--bordure); color: var(--texte); }
+.manches-erreur { display: block; font-size: 13px; color: var(--discret); font-weight: 400; margin-top: 4px; }
+.parcours { border-left: 4px solid var(--vert); display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+.parcours-liste { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.parcours-choix { display: flex; flex-direction: column; gap: 4px; padding: 10px; border: 1px solid var(--bordure); border-radius: 8px; }
+.parcours-choix.conseille { border-color: var(--vert); }
+.parcours-choix em { color: var(--vert); font-style: normal; font-size: 12px; font-weight: 600; }
+.parcours-choix span { color: var(--discret); font-size: 13px; flex: 1; }
+.parcours-choix button { align-self: flex-start; background: var(--vert); color: #0f1923; border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer; }
+.parcours .points { display: flex; align-items: center; gap: 6px; color: var(--discret); font-size: 13px; }
+.parcours .point { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--vert); }
+.parcours .point.plein { background: var(--vert); }
+.parcours .etapes { padding-left: 20px; color: var(--discret); }
+.parcours .etapes .faite { color: var(--vert); }
+.parcours .etapes .en-cours { color: var(--texte); font-weight: 600; }
+.parcours-resultat.reussie, .parcours-resultat.etape, .parcours-fini { color: var(--vert); font-weight: 600; }
+.parcours-resultat.ratee { color: var(--jaune); }
+.lien { background: none; border: 0; padding: 0; color: var(--vert); font: inherit; text-decoration: underline; cursor: pointer; align-self: flex-start; }
