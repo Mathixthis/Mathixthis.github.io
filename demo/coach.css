@@ -244,6 +244,9 @@ select { max-width: 70%; }
 /* Échauffement lié à la mission, objectif de rang. */
 .echauffement { border-left: 4px solid var(--jaune); }
 .echauffement ol { margin-top: 6px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #d5d1ca; }
+.session { border-left: 4px solid #7b8cff; font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
+.session.alerte { border-left-color: var(--rouge); }
+.session .pause { font-weight: 600; color: var(--texte); }
 .objectif-rang { border-left: 4px solid #7b8cff; font-size: 14px; }
 
 /* Avis sur le diagnostic (bêta) et sondage. */
@@ -282,3 +285,8 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .fiche-carte ul { list-style: none; padding: 0 12px 10px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #d5d1ca; }
 .fiche-carte .faible { color: var(--rouge); font-weight: 600; }
 .reglage select { width: 200px; }
+
+.carte-progres img { display: block; width: 100%; max-width: 360px; margin: 8px 0; border-radius: 8px; border: 1px solid var(--bordure); }
+.boutons-carte { display: flex; gap: 8px; }
+.boutons-carte button, .boutons-carte .bouton { background: var(--rouge); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.boutons-carte .bouton { background: var(--bordure); color: var(--texte); }
