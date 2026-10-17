@@ -1,18 +1,20 @@
 :root {
-  --fond: #120f18;
-  --carte: #1c1825;
-  --bordure: #2e2838;
-  --texte: #f1edf5;
-  --discret: #9b93a8;
-  --rouge: #ff5a2e;
+  --fond: #130c1c;
+  --carte: #1f162b;
+  --bordure: #35284c;
+  --texte: #f3eef8;
+  --discret: #a59ab8;
+  --or: #e6b450;
+  --rouge: #e2546b; /* erreurs et défaites */
+  --violet: #8b5cf6;
   --vert: #3ddc97;
-  --jaune: #f5c451;
+  --jaune: var(--or);
 }
 
 * { box-sizing: border-box; margin: 0; }
 
 body {
-  background: var(--fond);
+  background: radial-gradient(ellipse at 80% -10%, rgba(139, 92, 246, .16), transparent 55%) no-repeat, var(--fond);
   color: var(--texte);
   font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
   padding: 20px 18px 16px;
@@ -24,7 +26,7 @@ body {
 
 .entete { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .logo { font-weight: 800; font-size: 20px; letter-spacing: 2px; }
-.logo span { color: var(--rouge); }
+.logo span { color: var(--or); }
 .partie { color: var(--discret); font-size: 13px; }
 .partie .victoire { color: var(--vert); font-weight: 600; }
 .partie .defaite { color: var(--rouge); font-weight: 600; }
@@ -112,7 +114,7 @@ main { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .detail-manche ul { margin-top: 4px; padding-left: 18px; color: var(--discret); }
 
 .reglage { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 14px; margin-top: 6px; }
-.reglage input { accent-color: var(--rouge); width: 16px; height: 16px; order: 1; }
+.reglage input { accent-color: var(--or); width: 16px; height: 16px; order: 1; }
 
 select, textarea, .ticket button {
   background: var(--fond); color: var(--texte); border: 1px solid var(--bordure);
@@ -122,7 +124,7 @@ select { max-width: 70%; }
 .ticket { display: flex; flex-direction: column; gap: 8px; }
 .ticket select { max-width: none; align-self: flex-start; }
 .ticket textarea { resize: vertical; width: 100%; }
-.ticket button { background: var(--rouge); border-color: var(--rouge); font-weight: 700; cursor: pointer; }
+.ticket button { background: var(--or); border-color: var(--or); color: var(--fond); font-weight: 700; cursor: pointer; }
 .ticket button:disabled { opacity: 0.5; cursor: default; }
 .ticket-retour { font-size: 13px; color: var(--discret); min-height: 1em; }
 
@@ -170,7 +172,7 @@ select { max-width: 70%; }
 .bibliotheque .sources a { color: var(--discret); }
 
 /* Badges et défis */
-.nouveautes { border-left: 4px solid var(--jaune); background: linear-gradient(90deg, rgba(245, 196, 81, .12), var(--carte) 60%); }
+.nouveautes { border-left: 4px solid var(--jaune); background: linear-gradient(90deg, rgba(230, 180, 80, .12), var(--carte) 60%); }
 .nouveautes ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .nouveautes li { display: flex; gap: 10px; align-items: center; }
 .nouveautes strong { display: block; color: var(--jaune); }
@@ -203,7 +205,7 @@ select { max-width: 70%; }
 #contenu, #progression { display: flex; flex-direction: column; gap: 12px; }
 .onglets { display: flex; gap: 6px; border-bottom: 1px solid var(--bordure); }
 .onglets button { background: none; border: none; border-bottom: 3px solid transparent; color: var(--discret); font: inherit; font-weight: 700; padding: 8px 12px; cursor: pointer; margin-bottom: -1px; }
-.onglets button[aria-selected="true"] { color: var(--texte); border-bottom-color: var(--rouge); }
+.onglets button[aria-selected="true"] { color: var(--texte); border-bottom-color: var(--or); }
 .onglets button:hover { color: var(--texte); }
 
 .courbe-titre { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
@@ -243,7 +245,7 @@ select { max-width: 70%; }
 
 /* Échauffement lié à la mission, objectif de rang. */
 .echauffement { border-left: 4px solid var(--jaune); }
-.echauffement ol { margin-top: 6px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #d6d0de; }
+.echauffement ol { margin-top: 6px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #ddd5e8; }
 .session { border-left: 4px solid #7b8cff; font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
 .session.alerte { border-left-color: var(--rouge); }
 .session .pause { font-weight: 600; color: var(--texte); }
@@ -282,13 +284,13 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .fiche-carte { background: var(--fond); border: 1px solid var(--bordure); border-radius: 8px; }
 .fiche-carte > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 10px; padding: 9px 12px; font-size: 14px; }
 .fiche-carte > summary span:last-child { color: var(--discret); white-space: nowrap; }
-.fiche-carte ul { list-style: none; padding: 0 12px 10px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #d6d0de; }
+.fiche-carte ul { list-style: none; padding: 0 12px 10px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #ddd5e8; }
 .fiche-carte .faible { color: var(--rouge); font-weight: 600; }
 .reglage select { width: 200px; }
 
 .carte-progres img { display: block; width: 100%; max-width: 360px; margin: 8px 0; border-radius: 8px; border: 1px solid var(--bordure); }
 .boutons-carte { display: flex; gap: 8px; }
-.boutons-carte button, .boutons-carte .bouton { background: var(--rouge); color: #fff; border: 0; border-radius: 6px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
+.boutons-carte button, .boutons-carte .bouton { background: var(--or); color: var(--fond); border: 0; border-radius: 6px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
 .boutons-carte .bouton { background: var(--bordure); color: var(--texte); }
 .manches-erreur { display: block; font-size: 13px; color: var(--discret); font-weight: 400; margin-top: 4px; }
 .parcours { border-left: 4px solid var(--vert); display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
@@ -297,7 +299,7 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .parcours-choix.conseille { border-color: var(--vert); }
 .parcours-choix em { color: var(--vert); font-style: normal; font-size: 12px; font-weight: 600; }
 .parcours-choix span { color: var(--discret); font-size: 13px; flex: 1; }
-.parcours-choix button { align-self: flex-start; background: var(--vert); color: #120f18; border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer; }
+.parcours-choix button { align-self: flex-start; background: var(--vert); color: #130c1c; border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer; }
 .parcours .points { display: flex; align-items: center; gap: 6px; color: var(--discret); font-size: 13px; }
 .parcours .point { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--vert); }
 .parcours .point.plein { background: var(--vert); }
@@ -309,9 +311,9 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .lien { background: none; border: 0; padding: 0; color: var(--vert); font: inherit; text-decoration: underline; cursor: pointer; align-self: flex-start; }
 
 /* Écran de bienvenue (première ouverture). */
-.bienvenue { position: relative; border-left: 4px solid var(--rouge); }
+.bienvenue { position: relative; border-left: 4px solid var(--or); }
 .bienvenue h1 { font-size: 20px; line-height: 1.25; margin-bottom: 8px; padding-right: 28px; }
-.bienvenue ul { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #d6d0de; }
+.bienvenue ul { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #ddd5e8; }
 .bienvenue .fermer { position: absolute; top: 10px; right: 12px; background: none; border: 0; color: var(--discret); font-size: 16px; cursor: pointer; }
 .bienvenue .fermer:hover { color: var(--texte); }
-.bienvenue .cest-parti { margin-top: 12px; background: var(--rouge); color: #fff; border: 0; border-radius: 8px; padding: 8px 16px; font: inherit; font-weight: 700; cursor: pointer; }
+.bienvenue .cest-parti { margin-top: 12px; background: var(--or); color: var(--fond); border: 0; border-radius: 8px; padding: 8px 16px; font: inherit; font-weight: 700; cursor: pointer; }
