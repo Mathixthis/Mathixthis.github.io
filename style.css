@@ -1,10 +1,10 @@
 :root {
-  --fond: #0f1923;
-  --carte: #1a2733;
-  --bordure: #2a3a48;
-  --texte: #ece8e1;
-  --discret: #8b978f;
-  --rouge: #ff4655;
+  --fond: #120f18;
+  --carte: #1c1825;
+  --bordure: #2e2838;
+  --texte: #f1edf5;
+  --discret: #9b93a8;
+  --rouge: #ff5a2e;
   --vert: #3ddc97;
   --jaune: #f5c451;
   --bleu: #7b8cff;
@@ -13,7 +13,7 @@
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: radial-gradient(ellipse at 70% 0%, rgba(255, 70, 85, .14), transparent 55%), var(--fond);
+  background: radial-gradient(ellipse at 70% 0%, rgba(255, 90, 46, .14), transparent 55%), var(--fond);
   color: var(--texte);
   font: 17px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif;
   min-height: 100vh;
@@ -35,7 +35,7 @@ img, video { max-width: 100%; display: block; }
 .sur-titre { color: var(--rouge); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; font-size: 14px; }
 h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.02; font-weight: 900; font-style: italic; text-transform: uppercase; letter-spacing: -1px; margin: 10px 0 20px; }
 h1 em { color: var(--rouge); }
-.intro { color: #cfcac2; font-size: 19px; max-width: 34em; }
+.intro { color: #d6d0de; font-size: 19px; max-width: 34em; }
 .intro strong { color: var(--texte); }
 .boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .bouton {
@@ -43,11 +43,11 @@ h1 em { color: var(--rouge); }
   border: 1px solid var(--bordure); background: var(--carte);
 }
 .bouton:hover { border-color: var(--texte); }
-.bouton.principal { background: var(--rouge); border-color: var(--rouge); color: #fff; box-shadow: 0 10px 30px rgba(255, 70, 85, .3); }
+.bouton.principal { background: var(--rouge); border-color: var(--rouge); color: #fff; box-shadow: 0 10px 30px rgba(255, 90, 46, .3); }
 .bouton.principal:hover { filter: brightness(1.08); }
 .bientot { margin-top: 16px; color: var(--jaune); font-weight: 600; font-size: 15px; letter-spacing: 1px; }
 
-.telephone { justify-self: center; width: min(320px, 100%); aspect-ratio: 9 / 16; border-radius: 28px; overflow: hidden; border: 6px solid #22303c; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); background: #000; }
+.telephone { justify-self: center; width: min(320px, 100%); aspect-ratio: 9 / 16; border-radius: 28px; overflow: hidden; border: 6px solid #28222f; box-shadow: 0 30px 80px rgba(0, 0, 0, .6); background: #000; }
 .telephone video { width: 100%; height: 100%; object-fit: cover; }
 
 h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; text-transform: uppercase; font-style: italic; margin-bottom: 24px; }
@@ -56,7 +56,7 @@ h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; text-transform: upperc
 .cartes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .carte { background: var(--carte); border: 1px solid var(--bordure); border-top: 4px solid; border-radius: 12px; padding: 20px; }
 .carte h3 { font-size: 19px; margin-bottom: 8px; }
-.carte p { color: #cfcac2; font-size: 15px; }
+.carte p { color: #d6d0de; font-size: 15px; }
 .carte.rouge { border-top-color: var(--rouge); }
 .carte.jaune { border-top-color: var(--jaune); }
 .carte.vert { border-top-color: var(--vert); }
@@ -64,12 +64,12 @@ h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; text-transform: upperc
 
 .regles { padding: 0 0 64px; }
 .regles ul { list-style: none; padding: 0; display: grid; gap: 12px; max-width: 46em; }
-.regles li { padding-left: 22px; position: relative; color: #cfcac2; }
+.regles li { padding-left: 22px; position: relative; color: #d6d0de; }
 .regles li::before { content: "›"; position: absolute; left: 0; color: var(--rouge); font-weight: 800; }
 .regles strong { color: var(--texte); }
 
 .appel { text-align: center; background: var(--carte); border: 1px solid var(--bordure); border-radius: 16px; padding: 40px 24px; margin-bottom: 64px; }
-.appel p { color: #cfcac2; margin: -10px auto 22px; max-width: 32em; }
+.appel p { color: #d6d0de; margin: -10px auto 22px; max-width: 32em; }
 
 .bas { border-top: 1px solid var(--bordure); padding: 24px 0 40px; font-size: 14px; color: var(--discret); }
 .bas p + p { margin-top: 10px; }
@@ -79,8 +79,8 @@ h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; text-transform: upperc
 .page { max-width: 760px; padding: 24px 0 64px; }
 .page h1 { font-size: clamp(28px, 5vw, 40px); }
 .page h2 { font-size: 22px; font-style: normal; text-transform: none; margin: 28px 0 10px; }
-.page ul { padding-left: 20px; display: grid; gap: 6px; color: #cfcac2; }
-.page p { color: #cfcac2; margin-bottom: 10px; }
+.page ul { padding-left: 20px; display: grid; gap: 6px; color: #d6d0de; }
+.page p { color: #d6d0de; margin-bottom: 10px; }
 
 @media (max-width: 900px) {
   .accroche { grid-template-columns: 1fr; padding-top: 24px; }
@@ -101,11 +101,11 @@ html { scroll-padding-top: 20px; }
 .etapes li { background: var(--carte); border: 1px solid var(--bordure); border-radius: 14px; padding: 22px; position: relative; }
 .etapes li span { position: absolute; top: -16px; left: 20px; width: 34px; height: 34px; border-radius: 50%; background: var(--rouge); color: #fff; font-weight: 900; display: grid; place-items: center; }
 .etapes h3 { margin: 8px 0 6px; font-size: 19px; }
-.etapes p { color: #cfcac2; font-size: 15px; }
+.etapes p { color: #d6d0de; font-size: 15px; }
 
 .fonction { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; padding: 40px 0 72px; }
 .fonction.inverse .explication { order: 2; }
-.explication p { color: #cfcac2; margin-bottom: 12px; max-width: 32em; }
+.explication p { color: #d6d0de; margin-bottom: 12px; max-width: 32em; }
 .explication strong { color: var(--texte); }
 .explication h2 { margin-bottom: 18px; }
 .captures { position: relative; }
@@ -136,7 +136,7 @@ html { scroll-padding-top: 20px; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; color: var(--rouge); font-weight: 900; }
 .faq details[open] summary::after { content: "–"; }
-.faq details p { color: #cfcac2; margin-top: 10px; }
+.faq details p { color: #d6d0de; margin-top: 10px; }
 .faq a { color: var(--rouge); }
 
 @media (max-width: 900px) {

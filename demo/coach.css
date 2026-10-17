@@ -1,10 +1,10 @@
 :root {
-  --fond: #0f1923;
-  --carte: #1a2733;
-  --bordure: #2a3a48;
-  --texte: #ece8e1;
-  --discret: #8b978f;
-  --rouge: #ff4655;
+  --fond: #120f18;
+  --carte: #1c1825;
+  --bordure: #2e2838;
+  --texte: #f1edf5;
+  --discret: #9b93a8;
+  --rouge: #ff5a2e;
   --vert: #3ddc97;
   --jaune: #f5c451;
 }
@@ -243,7 +243,7 @@ select { max-width: 70%; }
 
 /* Échauffement lié à la mission, objectif de rang. */
 .echauffement { border-left: 4px solid var(--jaune); }
-.echauffement ol { margin-top: 6px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #d5d1ca; }
+.echauffement ol { margin-top: 6px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: #d6d0de; }
 .session { border-left: 4px solid #7b8cff; font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
 .session.alerte { border-left-color: var(--rouge); }
 .session .pause { font-weight: 600; color: var(--texte); }
@@ -282,7 +282,7 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .fiche-carte { background: var(--fond); border: 1px solid var(--bordure); border-radius: 8px; }
 .fiche-carte > summary { cursor: pointer; display: flex; justify-content: space-between; gap: 10px; padding: 9px 12px; font-size: 14px; }
 .fiche-carte > summary span:last-child { color: var(--discret); white-space: nowrap; }
-.fiche-carte ul { list-style: none; padding: 0 12px 10px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #d5d1ca; }
+.fiche-carte ul { list-style: none; padding: 0 12px 10px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #d6d0de; }
 .fiche-carte .faible { color: var(--rouge); font-weight: 600; }
 .reglage select { width: 200px; }
 
@@ -297,7 +297,7 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .parcours-choix.conseille { border-color: var(--vert); }
 .parcours-choix em { color: var(--vert); font-style: normal; font-size: 12px; font-weight: 600; }
 .parcours-choix span { color: var(--discret); font-size: 13px; flex: 1; }
-.parcours-choix button { align-self: flex-start; background: var(--vert); color: #0f1923; border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer; }
+.parcours-choix button { align-self: flex-start; background: var(--vert); color: #120f18; border: 0; border-radius: 6px; padding: 6px 12px; font: inherit; font-weight: 700; cursor: pointer; }
 .parcours .points { display: flex; align-items: center; gap: 6px; color: var(--discret); font-size: 13px; }
 .parcours .point { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--vert); }
 .parcours .point.plein { background: var(--vert); }
@@ -307,3 +307,11 @@ kbd { background: var(--fond); border: 1px solid var(--bordure); border-bottom-w
 .parcours-resultat.reussie, .parcours-resultat.etape, .parcours-fini { color: var(--vert); font-weight: 600; }
 .parcours-resultat.ratee { color: var(--jaune); }
 .lien { background: none; border: 0; padding: 0; color: var(--vert); font: inherit; text-decoration: underline; cursor: pointer; align-self: flex-start; }
+
+/* Écran de bienvenue (première ouverture). */
+.bienvenue { position: relative; border-left: 4px solid var(--rouge); }
+.bienvenue h1 { font-size: 20px; line-height: 1.25; margin-bottom: 8px; padding-right: 28px; }
+.bienvenue ul { padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #d6d0de; }
+.bienvenue .fermer { position: absolute; top: 10px; right: 12px; background: none; border: 0; color: var(--discret); font-size: 16px; cursor: pointer; }
+.bienvenue .fermer:hover { color: var(--texte); }
+.bienvenue .cest-parti { margin-top: 12px; background: var(--rouge); color: #fff; border: 0; border-radius: 8px; padding: 8px 16px; font: inherit; font-weight: 700; cursor: pointer; }
