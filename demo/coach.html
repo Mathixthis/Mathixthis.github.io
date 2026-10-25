@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Récap · Démo Nextround</title>
+  <title data-en="Recap · Nextround demo">Récap · Démo Nextround</title>
   <link rel="icon" href="../logo.svg">
   <link rel="stylesheet" href="coach.css">
 </head>
@@ -14,11 +14,11 @@
   </header>
   <div class="partie" id="partie"></div>
   <nav class="onglets" role="tablist">
-    <button role="tab" data-vue="contenu" aria-selected="true">Dernière partie</button>
-    <button role="tab" data-vue="progression" aria-selected="false">Ta progression</button>
+    <button role="tab" data-vue="contenu" aria-selected="true" data-en="Last game">Dernière partie</button>
+    <button role="tab" data-vue="progression" aria-selected="false" data-en="Your progress">Ta progression</button>
   </nav>
 
-  <p class="partie"><a href="./" style="color:var(--rouge)">← Simuler une autre partie</a></p>
+  <p class="partie"><a href="./" style="color:var(--rouge)" data-en="← Simulate another game">← Simuler une autre partie</a></p>
   <div class="colonnes" style="grid-template-columns:1fr;max-width:760px">
     <main>
       <div id="contenu"></div>
@@ -30,47 +30,54 @@
       <div class="pub" id="pub"></div>
 
       <section class="bloc">
-        <div class="etiquette">Réglages</div>
-        <label class="reglage"><input type="checkbox" id="reglage-popup"> Afficher un conseil à chaque manche</label>
-        <label class="reglage">Ton rang
+        <div class="etiquette" data-en="Settings">Réglages</div>
+        <label class="reglage">Langue / Language
+          <select id="reglage-langue">
+            <option value="" data-en="Automatic">Automatique</option>
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+        <label class="reglage"><input type="checkbox" id="reglage-popup"> <span data-en="Show a tip every round">Afficher un conseil à chaque manche</span></label>
+        <label class="reglage"><span data-en="Your rank">Ton rang</span>
           <select id="reglage-rang">
-            <option value="">Automatique (rang affiché en jeu)</option>
+            <option value="" data-en="Automatic (rank shown in game)">Automatique (rang affiché en jeu)</option>
           </select>
         </label>
-        <label class="reglage">Ton objectif
+        <label class="reglage"><span data-en="Your goal">Ton objectif</span>
           <select id="reglage-objectif">
-            <option value="">Aucun</option>
+            <option value="" data-en="None">Aucun</option>
           </select>
         </label>
-        <label class="reglage">Position
+        <label class="reglage"><span data-en="Position">Position</span>
           <select id="reglage-position">
-            <option value="droite">À droite (près des armes)</option>
-            <option value="gauche">À gauche (sous la minimap)</option>
-            <option value="haut">En haut (sous le score)</option>
+            <option value="droite" data-en="Right (near the weapons)">À droite (près des armes)</option>
+            <option value="gauche" data-en="Left (under the minimap)">À gauche (sous la minimap)</option>
+            <option value="haut" data-en="Top (under the score)">En haut (sous le score)</option>
           </select>
         </label>
-        <p class="aide">En jeu, <kbd>Alt</kbd> + <kbd>N</kbd> affiche ta mission par-dessus Valorant (et la referme). <a href="#" id="revoir-bienvenue">Revoir la présentation</a></p>
+        <p class="aide"><span data-en-html="In game, &lt;kbd&gt;Alt&lt;/kbd&gt; + &lt;kbd&gt;N&lt;/kbd&gt; shows your mission over VALORANT (and closes it).">En jeu, <kbd>Alt</kbd> + <kbd>N</kbd> affiche ta mission par-dessus Valorant (et la referme).</span> <a href="#" id="revoir-bienvenue" data-en="See the introduction again">Revoir la présentation</a></p>
       </section>
 
       <section class="bloc">
-        <div class="etiquette">Partager sur le Discord</div>
-        <label class="reglage"><input type="checkbox" id="reglage-partage"> Afficher mes badges et missions réussies sur le serveur Nextround</label>
-        <label class="reglage">Pseudo affiché
-          <input type="text" id="reglage-pseudo" maxlength="24" placeholder="Ton pseudo Discord" autocomplete="off">
+        <div class="etiquette" data-en="Share on Discord">Partager sur le Discord</div>
+        <label class="reglage"><input type="checkbox" id="reglage-partage"> <span data-en="Show my badges and completed missions on the Nextround server">Afficher mes badges et missions réussies sur le serveur Nextround</span></label>
+        <label class="reglage"><span data-en="Display name">Pseudo affiché</span>
+          <input type="text" id="reglage-pseudo" maxlength="24" placeholder="Ton pseudo Discord" data-en-placeholder="Your Discord name" autocomplete="off">
         </label>
-        <p class="aide" id="liaison" hidden>Pour recevoir tes rôles, tape <code>/lier <span id="code-liaison"></span></code> sur le serveur Discord. Ne donne ce code à personne.</p>
+        <p class="aide" id="liaison" hidden><span data-en="To get your roles, type">Pour recevoir tes rôles, tape</span> <code>/lier <span id="code-liaison"></span></code> <span data-en="on the Discord server. Don’t share this code with anyone.">sur le serveur Discord. Ne donne ce code à personne.</span></p>
       </section>
 
       <section class="bloc">
-        <div class="etiquette">Une idée ? Un bug ?</div>
+        <div class="etiquette" data-en="Idea? Bug?">Une idée ? Un bug ?</div>
         <form id="ticket" class="ticket">
-          <select id="ticket-type" aria-label="Type de message">
-            <option>Idée</option>
-            <option>Bug</option>
-            <option>Autre</option>
+          <select id="ticket-type" aria-label="Type de message" data-en-aria="Message type">
+            <option value="Idée" data-en="Idea">Idée</option>
+            <option value="Bug">Bug</option>
+            <option value="Autre" data-en="Other">Autre</option>
           </select>
-          <textarea id="ticket-message" maxlength="1000" rows="3" aria-label="Ton message" placeholder="Dis-nous ce que tu voudrais voir dans Nextround…" required></textarea>
-          <button type="submit">Envoyer</button>
+          <textarea id="ticket-message" maxlength="1000" rows="3" aria-label="Ton message" data-en-aria="Your message" placeholder="Dis-nous ce que tu voudrais voir dans Nextround…" data-en-placeholder="Tell us what you’d like to see in Nextround…" required></textarea>
+          <button type="submit" data-en="Send">Envoyer</button>
           <p class="ticket-retour" id="ticket-retour" role="status"></p>
         </form>
       </section>
@@ -79,12 +86,12 @@
 
   <!-- Tous les conseils de coach, par situation, avec les guides utilisés pour les écrire. -->
   <section class="bloc bibliotheque" aria-labelledby="titre-bibliotheque">
-    <div class="etiquette" id="titre-bibliotheque">Bibliothèque de conseils</div>
+    <div class="etiquette" id="titre-bibliotheque" data-en="Tips library">Bibliothèque de conseils</div>
     <div id="bibliotheque"></div>
   </section>
 
   <!-- Mention obligatoire demandée par Riot Games pour toute appli tierce. -->
-  <footer class="mentions">
+  <footer class="mentions" data-en="Nextround isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.">
     Nextround n’est pas approuvé par Riot Games et ne reflète pas les opinions de Riot Games ni de quiconque officiellement impliqué dans la production ou la gestion des propriétés de Riot Games. Riot Games et toutes les propriétés associées sont des marques commerciales ou des marques déposées de Riot Games, Inc.
   </footer>
 

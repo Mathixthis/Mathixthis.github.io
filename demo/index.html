@@ -18,14 +18,17 @@
     select { background: var(--carte); color: var(--texte); border: 1px solid var(--bordure); border-radius: 8px; padding: 8px; font: inherit; }
     .info { background: var(--carte); border: 1px solid var(--bordure); border-left: 4px solid var(--jaune); border-radius: 10px; padding: 12px 14px; font-size: 14px; color: #ddd5e8; }
     a { color: var(--or); }
+    .langues { display: flex; gap: 6px; }
+    .langues a { text-decoration: none; border: 1px solid var(--bordure); border-radius: 6px; padding: 0 8px; font-size: 13px; font-weight: 700; color: var(--discret); }
+    .langues a.active { color: var(--texte); border-color: var(--or); }
   </style>
 </head>
 <body>
-  <header class="entete"><a class="logo" href="../" style="text-decoration:none;color:inherit"><span>NEXT</span>ROUND</a><div class="partie">Démo en ligne</div></header>
-  <p class="info">Dans l’appli, Nextround reçoit les données de ta vraie partie via Overwolf. Ici, choisis un type de joueur : une fausse partie est générée, analysée exactement comme une vraie, puis le récap s’ouvre.</p>
-  <label class="choix-agent">Agent joué <select id="agent"></select></label>
+  <header class="entete"><a class="logo" href="../" style="text-decoration:none;color:inherit"><span>NEXT</span>ROUND</a><div class="langues"><span class="partie" data-en="Online demo">Démo en ligne</span><a href="#" data-langue="fr" lang="fr">FR</a><a href="#" data-langue="en" lang="en">EN</a></div></header>
+  <p class="info" data-en="In the app, Nextround receives your real match data through Overwolf. Here, pick a type of player: a fake match is generated, analysed exactly like a real one, then the recap opens.">Dans l’appli, Nextround reçoit les données de ta vraie partie via Overwolf. Ici, choisis un type de joueur : une fausse partie est générée, analysée exactement comme une vraie, puis le récap s’ouvre.</p>
+  <label class="choix-agent"><span data-en="Agent played">Agent joué</span> <select id="agent"></select></label>
   <div class="boutons" id="boutons"></div>
-  <p class="partie"><a href="../">← Retour à l’accueil</a></p>
+  <p class="partie"><a href="../" id="accueil" data-en="← Back to home">← Retour à l’accueil</a></p>
   <script src="moteur.min.js"></script>
   <script src="simulateur.min.js"></script>
 </body>
